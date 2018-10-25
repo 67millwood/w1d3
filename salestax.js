@@ -30,23 +30,23 @@ function calculateSalesTax(salesData, taxRates) {
       for (i = 0; i < salesData[companies].sales.length; i++) {
         totals += salesData[companies].sales[i];
       }
-      companySalesData[companies].totalSales = totals;
+      salesData[companies].totalSales = totals;
     }
     var totals = 0;
-    for (prov in companySalesData) {
-      var provcode = companySalesData[prov].province;
-      companySalesData[prov].rate = salesTaxRates[provcode];
+    for (prov in salesData) {
+      var provcode = salesData[prov].province;
+      salesData[prov].rate = salesTaxRates[provcode];
     }
-    for (calc in companySalesData) {
-      companySalesData[calc].totalTaxes = companySalesData[calc].totalSales * companySalesData[calc].rate
+    for (calc in salesData) {
+      salesData[calc].totalTaxes = salesData[calc].totalSales * salesData[calc].rate
 
     }
-    var happy = {}
+    console.log(salesData);
   }
 
 
 var results = calculateSalesTax(companySalesData, salesTaxRates);
-console.log(results);
+// console.log(results);
 /* Expected Results:
 {
   Telus: {
