@@ -41,7 +41,11 @@ function calculateSalesTax(salesData, taxRates) {
       salesData[calc].totalTaxes = salesData[calc].totalSales * salesData[calc].rate
 
     }
-    console.log(salesData);
+    for (last in salesData) {
+        console.log(salesData[last].name + " has " + salesData[last].totalSales + " in total Sales and " + salesData[last].totalTaxes + " in sales tax due.");
+      }
+
+    // return (salesData);
   }
 
 
